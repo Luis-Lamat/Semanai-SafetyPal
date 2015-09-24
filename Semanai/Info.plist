@@ -31,9 +31,9 @@
 		<string>armv7</string>
 	</array>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Hello there...</string>
+	<string>SafetyPal would like to use your location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>SafetyPal would like to use your location</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
