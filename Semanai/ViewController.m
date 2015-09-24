@@ -20,13 +20,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.locationManager requestWhenInUseAuthorization];
     self.mapType = 0;
-    _mapView.showsUserLocation = YES;
-    _mapView.delegate = self;
-    [self.view addSubview:mapView];
+    
+    [_mapView setShowsUserLocation:YES];
+    [_mapView setDelegate:self];
+    
+    NSLog(@"%@",_mapView.userLocation.location);
+    
+    // centers on user location
+    self.locationManager = [[CLLocationManager alloc] init];
+    [self.locationManager setDelegate:self];
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+    [self.locationManager startUpdatingLocation];
+    
     [self paintMapType];
-    [self setMapLocationWithLat:25.6509241 lon:-100.2890669];
+    // [self.view addSubview:mapView];
+    // [self setMapLocationWithLat:25.6509241 lon:-100.2890669];
 }
 
 - (void)didReceiveMemoryWarning {

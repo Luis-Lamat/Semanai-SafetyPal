@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CA6B37271BB46A49007E9291 /* MapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B37261BB46A49007E9291 /* MapPin.m */; settings = {ASSET_TAGS = (); }; };
+		CA6B372B1BB49F3C007E9291 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6B372A1BB49F3C007E9291 /* CoreLocation.framework */; };
 		CAAAA5AF1BB1C4E100A8F207 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAAA5AE1BB1C4E100A8F207 /* main.m */; };
 		CAAAA5B21BB1C4E100A8F207 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAAA5B11BB1C4E100A8F207 /* AppDelegate.m */; };
 		CAAAA5B51BB1C4E100A8F207 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAAA5B41BB1C4E100A8F207 /* ViewController.m */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		CA6B37251BB46A49007E9291 /* MapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPin.h; sourceTree = "<group>"; };
 		CA6B37261BB46A49007E9291 /* MapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPin.m; sourceTree = "<group>"; };
+		CA6B372A1BB49F3C007E9291 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CAAAA5AA1BB1C4E100A8F207 /* Semanai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Semanai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAAAA5AE1BB1C4E100A8F207 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CAAAA5B01BB1C4E100A8F207 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA6B372B1BB49F3C007E9291 /* CoreLocation.framework in Frameworks */,
 				CAAAA5E11BB1C52E00A8F207 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,6 +113,7 @@
 		CAAAA5A11BB1C4E100A8F207 = {
 			isa = PBXGroup;
 			children = (
+				CA6B372A1BB49F3C007E9291 /* CoreLocation.framework */,
 				CAAAA5E01BB1C52E00A8F207 /* MapKit.framework */,
 				CAAAA5AC1BB1C4E100A8F207 /* Semanai */,
 				CAAAA5C61BB1C4E100A8F207 /* SemanaiTests */,
