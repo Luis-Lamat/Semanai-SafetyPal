@@ -24,5 +24,6 @@
 @property(nonatomic, strong) CLLocationManager *locationManager;
 
 @property int mapType;
+@property CLLocationCoordinate2D selectedDestination;
 
 @end

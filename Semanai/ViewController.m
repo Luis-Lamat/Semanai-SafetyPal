@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SelectRouteViewController.h"
 
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
@@ -20,8 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // setting the map type to standard
     self.mapType = 0;
     
+    // showing the user's location
     [_mapView setShowsUserLocation:YES];
     [_mapView setDelegate:self];
     
@@ -36,7 +40,8 @@
     NSLog(@"%f", self.mapView.userLocation.coordinate.longitude);
     [self paintMapType];
     // [self.view addSubview:mapView];
-    // [self setMapLocationWithLat:25.6509241 lon:-100.2890669];
+    // [self setMapLocationWithLat:25.6509241 lon:-100.2890669]; // Tec Adsress
+        
 }
 
 - (void)didReceiveMemoryWarning {
@@ -177,7 +182,7 @@
     if ([overlay isKindOfClass:[MKPolyline class]]) {
         MKPolylineView* aView = [[MKPolylineView alloc]initWithPolyline:(MKPolyline*)overlay] ;
         aView.strokeColor = [[UIColor blueColor] colorWithAlphaComponent:0.5];
-        aView.lineWidth = 10;
+        aView.lineWidth = 15;
         return aView;
     }
     return nil;
@@ -194,12 +199,44 @@
     NSLog(@"%@", [error localizedDescription]);
 }
 
+- (IBAction)locPressed:(id)sender {
+}
+
+#pragma mark - Navigation
+
+/*
+ * prepareForSegue
+ *
+ * Method that gets called if view will segue
+ */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.destinationViewController isKindOfClass:[SelectRouteViewController class]]) {
+        SelectRouteViewController *vwDestination = [segue destinationViewController];
+        vwDestination.center = self.mapView.userLocation.coordinate;
+    }
+}
+
+
+/*
+ * unwindSelectRoute
+ *
+ * Method that gets called when you exit the route selection
+ */
+- (IBAction)unwindSelectRoute:(UIStoryboardSegue *)segue {
+    if (self.selectedDestination.longitude != 0.0) {
+        [self addPinOnCenter:self.selectedDestination title:@"Destino" subtitile:@""];
+        [self drawPathFrom:self.mapView.userLocation.coordinate to:self.selectedDestination];
+    }
+}
+
+/*
+ * unwindMenu
+ *
+ * Method that gets called when you exit the menu. Does nothing.
+ */
 - (IBAction)unwindMenu:(UIStoryboardSegue *)segue {
     
 }
 
-- (IBAction)locPressed:(id)sender {
-    
-}
 
 @end
