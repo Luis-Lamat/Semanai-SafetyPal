@@ -28,8 +28,8 @@
 @property CLLocationCoordinate2D selectedDestination;
 
 // actions
-- (IBAction)locPressed:(id)sender;
 - (IBAction)startRoutePressed:(id)sender;
+- (IBAction)eraseMapPressed:(id)sender;
 
 
 @end

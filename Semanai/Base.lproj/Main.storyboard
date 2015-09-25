@@ -177,7 +177,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67D-fg-oCq">
                                 <rect key="frame" x="16" y="32" width="39" height="30"/>
-                                <state key="normal" title="Menu">
+                                <state key="normal" title="Menú">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -219,7 +219,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="locPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tlb-3j-D66"/>
+                                    <action selector="eraseMapPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LOO-MA-z15"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXH-eH-HDq">
@@ -531,6 +531,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="sgtMapType" destination="P9O-b6-nMy" id="QDT-yN-yU9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pYZ-6h-Fbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="7v9-XD-gtX" userLabel="Exit" sceneMemberID="exit"/>

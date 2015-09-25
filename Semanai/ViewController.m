@@ -10,6 +10,7 @@
 #import "SelectRouteViewController.h"
 #import "RouteViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import <CoreLocation/CoreLocation.h>
 
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
@@ -68,11 +69,11 @@
     MKCoordinateRegion region = { {0.0, 0.0}, {0.0, 0.0} };
     region.center.latitude = lat;
     region.center.longitude = lon;
-    region.span.latitudeDelta = 0.01f;
-    region.span.longitudeDelta = 0.01f;
+    region.span.latitudeDelta = 0.03f;
+    region.span.longitudeDelta = 0.03f;
     [_mapView setRegion:region animated:YES];
     
-    [self addPinOnCenter:region.center title:@"Ejemplo" subtitile:@"Simple"];
+    // [self addPinOnCenter:region.center title:@"Ejemplo" subtitle:@"Simple"];
 }
 
 /*
@@ -82,7 +83,7 @@
  * @param a CLLocationCoordinate2D called center
  */
 - (void)addPinOnCenter:(CLLocationCoordinate2D)center
-                 title:(NSString *)title subtitile:(NSString *)subtitle {
+                 title:(NSString *)title subtitle:(NSString *)subtitle {
     MapPin *ann = [[MapPin alloc] init];
     ann.title = title;
     ann.subtitle = subtitle;
@@ -221,9 +222,25 @@
     
 }
 
-// ignore this method for now
-- (IBAction)locPressed:(id)sender{}
-
+/*
+ * eraseMapPressed:
+ *
+ * Method that gets called if the "Erase Map" ("Borrar") button is pressed.
+ * @param "sender" is the button itself.
+ */
+- (IBAction)eraseMapPressed:(id)sender {
+    // clean the map
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    [self.mapView removeOverlays:self.mapView.overlays];
+    // reset view variables
+    self.routeETA = 0.0;
+    self.selectedDestination = CLLocationCoordinate2DMake(0.0, 0.0);
+    // hide the start route button
+    [self.btnStartRoute setHidden:YES];
+    //center on the user's location
+    [self setMapLocationWithLat:self.mapView.userLocation.coordinate.latitude
+                            lon:self.mapView.userLocation.coordinate.longitude];
+}
 
 #pragma mark - Navigation
 
@@ -252,7 +269,7 @@
  */
 - (IBAction)unwindSelectRoute:(UIStoryboardSegue *)segue {
     if (self.selectedDestination.longitude != 0.0) {
-        [self addPinOnCenter:self.selectedDestination title:@"Destino" subtitile:@""];
+        [self addPinOnCenter:self.selectedDestination title:@"Destino" subtitle:@""];
         [self drawPathFrom:self.mapView.userLocation.coordinate to:self.selectedDestination];
         [self.btnStartRoute setHidden:NO];
     }
@@ -264,7 +281,7 @@
  * Method that gets called when you exit the menu. Does nothing.
  */
 - (IBAction)unwindMenu:(UIStoryboardSegue *)segue {
-    
+    [self paintMapType];
 }
 
 

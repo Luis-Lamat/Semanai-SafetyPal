@@ -10,4 +10,6 @@
 
 @interface MenuViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *sgtMapType;
+
 @end
