@@ -32,6 +32,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*
+ * emergencyPressed:
+ *
+ * Method that fires when the emergency hand button is pressed
+ * @param sender is the button that calls the action
+ */
 - (IBAction)emergencyPressed:(id)sender {
     UIAlertController *alert = [UIAlertController
                                 alertControllerWithTitle:@"¡Emergencia!"
@@ -50,13 +56,24 @@
     [alert addAction:cancel];
     [self presentViewController:alert animated:YES completion:nil];
 }
-
+/*
+ * notifyPolice:
+ *
+ * Method that notifies the local police of any danger. It also creates a report
+ * int the CIC platform of Monterrey, MX
+ */
 - (void)notifyPolice {
     // add CIC REST API
     [self showPoliceNotifiedAlert];
     [self.lblPoliceOnItsWay setHidden:NO];
 }
 
+/*
+ * showPoliceNotifiedAlert:
+ *
+ * Method that shows an alert that tells the user that the police has already
+ * been notified of the emergency.
+ */
 - (void)showPoliceNotifiedAlert {
     UIAlertController *alert = [UIAlertController
                                 alertControllerWithTitle:@"Policía en Camino"
@@ -69,6 +86,11 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+/*
+ * showShakeAlert:
+ *
+ * Method that shows an alert when the iPhone is shaken.
+ */
 - (void)showShakeAlert {
     UIAlertController *alert = [UIAlertController
                                 alertControllerWithTitle:@"IMPORTANTE: ¿Estás Bien?"
@@ -113,8 +135,6 @@
         // shaking has began.
     }
 }
-
-
 -(void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event{
     if (motion == UIEventSubtypeMotionShake ){
         // shaking has ended
