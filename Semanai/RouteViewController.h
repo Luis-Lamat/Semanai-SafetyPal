@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @interface RouteViewController : UIViewController
 
 // outlets / values
 @property (weak, nonatomic) IBOutlet UILabel *lblETA;
 @property (weak, nonatomic) IBOutlet UILabel *lblPoliceOnItsWay;
+@property CLLocationCoordinate2D usersLocation;
 @property double minutes;
 
 // actions

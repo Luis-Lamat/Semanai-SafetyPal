@@ -160,7 +160,7 @@
         
         // setting the route estimated time of arrival
         self.routeETA = [[arrRoutes firstObject] expectedTravelTime];
-        NSLog(@"Route ETA: %f", [[arrRoutes firstObject] expectedTravelTime]);
+        NSLog(@"Route ETA: %f seconds", [[arrRoutes firstObject] expectedTravelTime]);
         
         [arrRoutes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             
@@ -168,16 +168,16 @@
             
             MKPolyline *line = [rout polyline];
             [self.mapView addOverlay:line]; // this fires the methos below
-            NSLog(@"Rout Name : %@",rout.name);
-            NSLog(@"Total Distance (in Meters) :%f",rout.distance);
+            // NSLog(@"Rout Name : %@",rout.name);
+            // NSLog(@"Total Distance (in Meters) :%f",rout.distance);
             
             NSArray *steps = [rout steps];
             
-            NSLog(@"Total Steps : %lu",(unsigned long)[steps count]);
+            // NSLog(@"Total Steps : %lu",(unsigned long)[steps count]);
             
             [steps enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                NSLog(@"Rout Instruction : %@",[obj instructions]);
-                NSLog(@"Rout Distance : %f",[obj distance]);
+                // NSLog(@"Rout Instruction : %@",[obj instructions]);
+                // NSLog(@"Rout Distance : %f",[obj distance]);
             }];
         }];
     }];
@@ -240,6 +240,7 @@
     else if ([segue.destinationViewController isKindOfClass:[RouteViewController class]]) {
         RouteViewController *vwDestination = [segue destinationViewController];
         vwDestination.minutes = self.routeETA;
+        vwDestination.usersLocation = self.mapView.userLocation.coordinate;
     }
 }
 

@@ -63,7 +63,7 @@
  * int the CIC platform of Monterrey, MX
  */
 - (void)notifyPolice {
-    // add CIC REST API
+    [self submitCICReport]; // CIC REST API
     [self showPoliceNotifiedAlert];
     [self.lblPoliceOnItsWay setHidden:NO];
 }
@@ -108,6 +108,56 @@
     [alert addAction:ok];
     [alert addAction:cancel];
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+/*
+ * submitCICReport
+ *
+ * Method that submits via POST method the json data of the problem
+ * the user is having. Defaults to a template message.
+ */
+- (void)submitCICReport{
+    NSString *lat = [NSString stringWithFormat:@"%.5f", self.usersLocation.latitude];
+    NSString *lon = [NSString stringWithFormat:@"%.5f", self.usersLocation.longitude];
+    NSArray *keys = [NSArray arrayWithObjects:@"format", @"account", @"title",
+                     @"content", @"first_name", @"last_name", @"lat", @"lon",
+                     @"category", nil];
+    NSArray *objects = [[NSArray alloc] initWithObjects:@"json", @"nl", @"Alerta de SafetyPal",
+                        @"El usuario de la aplicación no responde", @"Safety", @"Pal",
+                        lat, lon, @"ACCIDENTE", nil];
+    
+    NSDictionary *requestDict = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:requestDict options:0 error:&error];
+    
+    // print the data to console to check if its correct
+    NSString *strPostData = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSLog(@"\nJSON Data: \n %@", strPostData);
+    
+    // init the URL and the request objects
+    NSURL *url = [NSURL URLWithString:@"http://api.cic.mx/0/nl/reports.json"];
+    NSMutableURLRequest *request = [NSMutableURLRequest
+                                    requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                    timeoutInterval:60.0];
+    
+    // init the session object
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:nil delegateQueue:nil];
+    
+    // setting the request body and headers
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[jsonData length]] forHTTPHeaderField:@"Content-Length"];
+    [request setHTTPBody: jsonData];
+    
+    // send the data with a callback block
+    NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSLog(@"\n\nResponse: \n %@", response);
+    }];
+    
+    // IDK what this is for...
+    [postDataTask resume];
 }
 
 #pragma mark - Shake Functions
