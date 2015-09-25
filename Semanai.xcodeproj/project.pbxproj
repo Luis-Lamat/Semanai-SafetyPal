@@ -11,6 +11,7 @@
 		CA6B372B1BB49F3C007E9291 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6B372A1BB49F3C007E9291 /* CoreLocation.framework */; };
 		CA9518411BB4CF71007174DB /* SelectRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9518401BB4CF71007174DB /* SelectRouteViewController.m */; settings = {ASSET_TAGS = (); }; };
 		CA9518441BB4F78E007174DB /* RouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9518431BB4F78E007174DB /* RouteViewController.m */; settings = {ASSET_TAGS = (); }; };
+		CA9518471BB5B098007174DB /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9518461BB5B098007174DB /* ContactsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		CAAAA5AF1BB1C4E100A8F207 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAAA5AE1BB1C4E100A8F207 /* main.m */; };
 		CAAAA5B21BB1C4E100A8F207 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAAA5B11BB1C4E100A8F207 /* AppDelegate.m */; };
 		CAAAA5B51BB1C4E100A8F207 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAAA5B41BB1C4E100A8F207 /* ViewController.m */; };
@@ -48,6 +49,8 @@
 		CA9518401BB4CF71007174DB /* SelectRouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectRouteViewController.m; sourceTree = "<group>"; };
 		CA9518421BB4F78E007174DB /* RouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteViewController.h; sourceTree = "<group>"; };
 		CA9518431BB4F78E007174DB /* RouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteViewController.m; sourceTree = "<group>"; };
+		CA9518451BB5B098007174DB /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
+		CA9518461BB5B098007174DB /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 		CAAAA5AA1BB1C4E100A8F207 /* Semanai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Semanai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAAAA5AE1BB1C4E100A8F207 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CAAAA5B01BB1C4E100A8F207 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -108,6 +111,8 @@
 		CA6B37291BB46BA2007E9291 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CA9518451BB5B098007174DB /* ContactsViewController.h */,
+				CA9518461BB5B098007174DB /* ContactsViewController.m */,
 				CA95183F1BB4CF71007174DB /* SelectRouteViewController.h */,
 				CA9518401BB4CF71007174DB /* SelectRouteViewController.m */,
 				CAAAA5B31BB1C4E100A8F207 /* ViewController.h */,
@@ -316,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAAAA5B51BB1C4E100A8F207 /* ViewController.m in Sources */,
+				CA9518471BB5B098007174DB /* ContactsViewController.m in Sources */,
 				CA6B37271BB46A49007E9291 /* MapPin.m in Sources */,
 				CA9518411BB4CF71007174DB /* SelectRouteViewController.m in Sources */,
 				CAAAA5B21BB1C4E100A8F207 /* AppDelegate.m in Sources */,
