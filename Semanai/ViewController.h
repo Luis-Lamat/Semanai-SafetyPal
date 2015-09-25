@@ -18,12 +18,18 @@
     MKMapView *mapView;
 }
 
-
-- (IBAction)locPressed:(id)sender;
-@property(nonatomic, strong) IBOutlet MKMapView *mapView;
-@property(nonatomic, strong) CLLocationManager *locationManager;
+// outlets / values
+@property (weak, nonatomic) IBOutlet UIButton *btnStartRoute;
+@property(strong, nonatomic) IBOutlet MKMapView *mapView;
+@property(strong, nonatomic) CLLocationManager *locationManager;
 
 @property int mapType;
+@property NSTimeInterval routeETA;
 @property CLLocationCoordinate2D selectedDestination;
+
+// actions
+- (IBAction)locPressed:(id)sender;
+- (IBAction)startRoutePressed:(id)sender;
+
 
 @end

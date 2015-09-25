@@ -29,7 +29,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SafetyPal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eg8-8S-iKk">
-                                <rect key="frame" x="41" y="104" width="239" height="90"/>
+                                <rect key="frame" x="61" y="119" width="198" height="90"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="51"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -53,6 +53,9 @@
                                     <segue destination="FKv-iM-abG" kind="presentation" id="onK-EF-Vr9"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="white_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Wsd-VU-LOK">
+                                <rect key="frame" x="125" y="42" width="73" height="74"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -108,12 +111,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Puedes ver tus contactos en &quot;Ver Contactos&quot;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgV-tQ-vWU">
-                                <rect key="frame" x="59" y="274" width="221" height="58"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tu ubicación se muestra con el siguiente ícono:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RW9-R5-GoC">
                                 <rect key="frame" x="59" y="341" width="228" height="58"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -141,6 +138,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="cDB-Wg-xSw">
                                 <rect key="frame" x="123" y="407" width="74" height="74"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Puedes elegir a tus acompañantes en &quot;SafetyPals&quot;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgV-tQ-vWU">
+                                <rect key="frame" x="61" y="270" width="250" height="68"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -148,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zhj-Kn-Tt0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="300" y="329"/>
+            <point key="canvasLocation" x="200" y="327"/>
         </scene>
         <!--Title-->
         <scene sceneID="tne-QT-ifu">
@@ -201,17 +204,31 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="d5J-lP-efL"/>
-                                    <barButtonItem title="Ver Contactos" id="lid-Rx-9AT">
+                                    <barButtonItem title="SafetyPals" id="lid-Rx-9AT">
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                 </items>
                                 <color key="barTintColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                             </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtm-k8-4cf">
-                                <rect key="frame" x="267" y="32" width="30" height="30"/>
-                                <state key="normal" title="Loc">
+                                <rect key="frame" x="261" y="32" width="43" height="30"/>
+                                <state key="normal" title="Borrar">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="locPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tlb-3j-D66"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXH-eH-HDq">
+                                <rect key="frame" x="102" y="473" width="116" height="39"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Empezar ruta">
+                                    <color key="titleColor" red="0.94611855160000002" green="0.94611855160000002" blue="0.94611855160000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startRoutePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T1F-lf-wMf"/>
+                                    <segue destination="00Q-fD-Gmb" kind="presentation" id="di7-cz-tzc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -219,12 +236,13 @@
                     <navigationItem key="navigationItem" title="Title" id="XZf-Fh-Rvi"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="btnStartRoute" destination="KXH-eH-HDq" id="bfX-kp-cjl"/>
                         <outlet property="mapView" destination="jYk-V2-NF1" id="APT-Mw-Y6p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="852" y="329"/>
+            <point key="canvasLocation" x="602" y="329"/>
         </scene>
         <!--Select Route View Controller-->
         <scene sceneID="rbw-AB-cdY">
@@ -311,7 +329,88 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E6c-O2-YaV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="J2Y-qg-HPq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1326" y="675"/>
+            <point key="canvasLocation" x="1076" y="707"/>
+        </scene>
+        <!--Route View Controller-->
+        <scene sceneID="y2d-Am-gGs">
+            <objects>
+                <viewController id="00Q-fD-Gmb" customClass="RouteViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OgH-mr-9Td"/>
+                        <viewControllerLayoutGuide type="bottom" id="X8m-eH-PmI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vkU-Sx-Yq9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fR0-RG-sbz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ruta en Progreso" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Mf-KR-x0a">
+                                <rect key="frame" x="0.0" y="20" width="320" height="54"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIr-VB-ZJF">
+                                <rect key="frame" x="24" y="208" width="272" height="120"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="75"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tiempo total de ruta:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZb-F9-Vde">
+                                <rect key="frame" x="80" y="192" width="160" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcN-1I-4wN">
+                                <rect key="frame" x="104" y="514" width="112" height="34"/>
+                                <state key="normal" title="Cancelar Ruta">
+                                    <color key="titleColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="mwa-ds-eoV" kind="unwind" unwindAction="unwindMenu:" id="VNr-TR-9UZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAm-lo-enf">
+                                <rect key="frame" x="112" y="341" width="97" height="101"/>
+                                <state key="normal" title="Button" image="purple_logo"/>
+                                <connections>
+                                    <action selector="emergencyPressed:" destination="00Q-fD-Gmb" eventType="touchUpInside" id="0BT-40-cL8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Emergencia" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuT-9e-KlN">
+                                <rect key="frame" x="101" y="443" width="119" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Policía en Camino" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikm-k0-wdQ">
+                                <rect key="frame" x="43" y="88" width="234" height="431"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="57"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="lblETA" destination="nIr-VB-ZJF" id="y4O-tk-XMS"/>
+                        <outlet property="lblPoliceOnItsWay" destination="ikm-k0-wdQ" id="hFt-m5-gAE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kED-dv-rBP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="mwa-ds-eoV" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1492" y="327"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="qHg-xg-L54">
@@ -370,10 +469,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pYZ-6h-Fbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="7v9-XD-gtX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1326" y="-28"/>
+            <point key="canvasLocation" x="1076" y="-34"/>
         </scene>
     </scenes>
     <resources>
         <image name="location" width="120" height="120"/>
+        <image name="purple_logo" width="200" height="200"/>
+        <image name="white_logo" width="307" height="307"/>
     </resources>
 </document>

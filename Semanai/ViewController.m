@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "SelectRouteViewController.h"
+#import "RouteViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
@@ -21,6 +23,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // round and hide the start route button
+    self.btnStartRoute.layer.cornerRadius = 10;
+    self.btnStartRoute.clipsToBounds = YES;
+    [self.btnStartRoute setHidden:YES];
     
     // setting the map type to standard
     self.mapType = 0;
@@ -148,8 +155,13 @@
     MKDirections *direction = [[MKDirections alloc]initWithRequest:request];
     
     [direction calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
-        NSLog(@"response = %@",response);
+        // NSLog(@"response = %@",response);
         NSArray *arrRoutes = [response routes];
+        
+        // setting the route estimated time of arrival
+        self.routeETA = [[arrRoutes firstObject] expectedTravelTime];
+        NSLog(@"Route ETA: %f", [[arrRoutes firstObject] expectedTravelTime]);
+        
         [arrRoutes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             
             MKRoute *rout = obj;
@@ -199,8 +211,19 @@
     NSLog(@"%@", [error localizedDescription]);
 }
 
-- (IBAction)locPressed:(id)sender {
+/*
+ * startRoutePressed:
+ *
+ * Method that gets called if the btnStartRoute button is pressed.
+ * @param "sender" is the button itself.
+ */
+- (IBAction)startRoutePressed:(id)sender {
+    
 }
+
+// ignore this method for now
+- (IBAction)locPressed:(id)sender{}
+
 
 #pragma mark - Navigation
 
@@ -214,6 +237,10 @@
         SelectRouteViewController *vwDestination = [segue destinationViewController];
         vwDestination.center = self.mapView.userLocation.coordinate;
     }
+    else if ([segue.destinationViewController isKindOfClass:[RouteViewController class]]) {
+        RouteViewController *vwDestination = [segue destinationViewController];
+        vwDestination.minutes = self.routeETA;
+    }
 }
 
 
@@ -226,6 +253,7 @@
     if (self.selectedDestination.longitude != 0.0) {
         [self addPinOnCenter:self.selectedDestination title:@"Destino" subtitile:@""];
         [self drawPathFrom:self.mapView.userLocation.coordinate to:self.selectedDestination];
+        [self.btnStartRoute setHidden:NO];
     }
 }
 
